@@ -1,7 +1,13 @@
-from django.urls import path
-from escola.views import estudantes
+from django.urls import path, include
+from escola.views import EstudanteViewSet, CursoViewSet
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register('estudantes', EstudanteViewSet,basename='Estudantes')
+router.register('cursos', CursoViewSet,basename='Cursos')
 
 
 urlpatterns = [
-    path('estudantes', estudantes)
+    path('', include(router.urls))
 ]
