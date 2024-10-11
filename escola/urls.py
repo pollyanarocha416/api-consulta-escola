@@ -4,11 +4,9 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register('estudantes', EstudanteViewSet,basename='Estudantes')
-router.register('cursos', CursoViewSet,basename='Cursos')
-router.register('matricula', MatriculaViewSet,basename='Matricula')
+router.register("estudantes", EstudanteViewSet, basename="Estudantes")
+router.register("cursos", CursoViewSet, basename="Cursos")
+router.register("matricula", MatriculaViewSet, basename="Matricula")
 
 
-urlpatterns = [
-    path('', include(router.urls))
-]
+urlpatterns = [path("", include(router.urls))]
